@@ -1,84 +1,25 @@
-Video App in C++
-================
+# Understanding OpenGL and FFmpeg
 
-I'm building a visualisation tool for live music performances. The app generates video
-grids containing one video for every element in the song. For elements that are pre-recorded
-the videos will be pre-recorded. For elements that are played live, the videos will be taken
-from webcams/capture cards/live streams.
+Most of the code is provided by Bartholomew.
+Thanks a million! 
 
-![Example Grid](https://raw.githubusercontent.com/bartjoyce/video-app/master/assets/example-grid.jpg)
+Yet, I'n not intending to improve this project.
+Rather, my goal is understanding FFmpeg and video processing technology.
 
-[This video explains the function of the app in detail.](https://www.youtube.com/watch?v=xSPXzwI9Czk)
+Many kinds of video editors should be created with C and C++,
+which means sort of technique requires low-level manipulation.
+I'm planning on creating a new video editor with Rust.
+I'm not going to publish a sort of projects as OSS, but a part of codes should be done.
 
-## Programming live streams
+So, stay tuned. 
 
-This app is being developed live on weekly Youtube live-streams. They are announced ahead of time on [my Youtube channel](https://www.youtube.com/channel/UClZL_faO7lGe6nM9MH-uu6A). You can also find all the previous streams on the [C++ Real-time video processing playlist](https://www.youtube.com/playlist?list=PLKucWgGjAuTbobNC28EaR9lbGQTVyD9IS)
+Thanks again, Barholomew.
 
-## Installation
+## his channel
+https://www.youtube.com/@bartholomewjoyce
 
-### 1. Prerequisites
+## his livestream
+https://www.youtube.com/watch?v=MEMzo59CPr8
 
-This app has 4 external dependencies:
-
-- **CMake** to build the project,
-- **pkg-config** to locate shared libraries,
-- **FFmpeg** to read and write video files.
-
-On MacOS using Homebrew, run:
-
-```sh
-brew install cmake ffmpeg pkg-config
-```
-
-### 2. Clone
-
-```sh
-git clone https://github.com/bartjoyce/video-app --recursive
-```
-
-The repository includes a submodule for GLFW, so make sure to *recursively* clone the repo. If CMake complains and says it can't find GLFW, it might be because you did not clone it properly. In that case, try:
-
-```sh
-git submodule update --init
-```
-
-### 3. Build
-
-Inside the repo, create a build directory and run CMake within it:
-
-```sh
-mkdir build
-cd build
-cmake ..
-make
-```
-
-### 4. Run
-
-```sh
-./video-app
-```
-
-## Bonus: Webcam capture with AVFoundation
-
-For webcam capture:
-
-```sh
-git checkout test/webcam
-cd build
-cmake ..
-make
-./video-app
-```
-
-This will use AVFoundation to display your webcam on the OpenGL surface.
-
-## Todo
-
-- Fix `av_err2str` build problem in gcc ([see issue](https://github.com/joncampbell123/composite-video-simulator/issues/5)).
-- Fix `YUVJ` deprecation problem
-- Fix `sws_scale()` segmentation fault on gcc due to badly constructed output buffers
-- Consider switch to SDL?
-- Replace `sws_scale()` with hardware-accelerated alternative 
-- Audio playback
-- Playback of multiple videos simultaneously
+## his GitHub repo
+https://github.com/bmewj/video-app?tab=readme-ov-file
